@@ -1,0 +1,6 @@
+:root {
+  --background: black;
+  --text-color: hsl(213, 100%, 97%);
+  --active-to: hsl(224, 3%, 46%);
+  --border: 2px solid #eee;
+}

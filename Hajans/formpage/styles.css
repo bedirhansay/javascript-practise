@@ -1,0 +1,60 @@
+#form-wrapper {
+  background-color: #eee;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  gap: 20px;
+}
+#form span {
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+#form span i {
+  color: var(--border);
+  color: red;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+input {
+  border: var(--border);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+#done {
+  border: none;
+  background-color: var(--text-color);
+  padding: 10px 25px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+#addValue {
+  border: none;
+  background-color: var(--text-color);
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+}

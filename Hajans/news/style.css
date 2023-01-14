@@ -1,0 +1,261 @@
+/* NAVBAR */
+
+.navbar {
+  background-color: var(--background);
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+
+.navbar div {
+  width: clamp(315px, 90%, 1100px);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  height: 72px;
+  align-items: center;
+}
+
+.navbar div > ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  color: var(--text-color);
+  @include grid-template;
+}
+
+.navbar div > ul li a {
+  color: var(--text-color);
+}
+
+.search-bar {
+  background-color: var(--active-to);
+  padding: 10px;
+  border-radius: 7px;
+}
+
+input::placeholder {
+  color: var(--text-color);
+  font-size: 12px;
+}
+
+/* HEADER  */
+
+header {
+  width: clamp(315px, 90%, 1100px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 32px auto;
+  font-size: 20px;
+  font-weight: 600px;
+}
+
+/* MAIN */
+
+#main-wrapper {
+  width: clamp(315px, 90%, 1100px);
+  display: grid;
+  grid-template-areas:
+    "div1 div1 div2 div3"
+    "div1 div1 div4 div5";
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin: 32px auto;
+
+  overflow: hidden;
+}
+#main-wrapper div {
+  min-height: 250px;
+}
+main div img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.div1 {
+  grid-area: div1;
+  /* grid-area: 1 / 1 / 3 / 3; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.div2 {
+  grid-area: div2;
+  /* grid-area: 1 / 3 / 2 / 4; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  justify-content: flex-end;
+}
+.div3 {
+  grid-area: div3;
+  /* grid-area: 1 / 4 / 2 / 5; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.div4 {
+  grid-area: div4;
+  /* grid-area: 2 / 3 / 3 / 4; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  justify-content: flex-end;
+}
+.div5 {
+  grid-area: div5;
+  /* grid-area: 2 / 4 / 3 / 5; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  justify-content: flex-end;
+}
+
+main div span {
+  border-left: 4px solid red;
+  padding-left: 10px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+main div h3 {
+  color: var(--text-color);
+}
+
+/*  NEWS */
+
+.news {
+  width: clamp(315px, 90%, 1100px);
+  margin: 100px auto;
+}
+
+.news > h2 {
+  border-left: 4px solid red;
+  border-spacing: 10px;
+  margin-bottom: 40px;
+  padding-left: 10px;
+}
+
+#news {
+  display: grid;
+  grid-template-areas: "new new1 new2";
+  gap: 20px;
+}
+#news div img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+}
+
+.new1 {
+  grid-area: new;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.new2 {
+  grid-area: new1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.new3 {
+  grid-area: new2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+#news div span {
+  text-transform: uppercase;
+  color: var(--active-to);
+  border-left: 3px solid red;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+#news div p {
+  font-size: 13px;
+}
+
+#menu {
+  display: none;
+}
+
+#mobile-navbar {
+  display: none;
+  position: fixed;
+  width: 200px;
+  bottom: 0;
+  height: 100vh;
+  left: -200px;
+  z-index: 2;
+  background-color: black;
+  flex-direction: column;
+  margin-top: 70px;
+  transition: left 0.3s;
+}
+
+@media (max-width: 1000px) {
+  #menu {
+    display: block;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+  #alt-mobile {
+    display: none;
+  }
+  #mobile-navbar {
+    display: flex;
+  }
+  #main-wrapper {
+    grid-template-areas:
+      "div1 div2 div3"
+      "div1 div4 div5";
+  }
+}
+@media (max-width: 750px) {
+  #main-wrapper {
+    grid-template-areas:
+      "div1 div1"
+      "div2 div3"
+      "div4 div5";
+  }
+  #news {
+    grid-template-areas:
+      "new"
+      "new1"
+      "new2";
+  }
+}
